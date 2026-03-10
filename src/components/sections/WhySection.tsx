@@ -50,7 +50,7 @@ export function WhySection() {
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   className="group p-6 rounded-[6px] border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/8 transition-all h-full"
                 >
-                  <div className="w-12 h-12 rounded-[6px] bg-[#1A9EC9]/20 border border-[#1A9EC9]/30 flex items-center justify-center mb-5 group-hover:bg-[#1A9EC9]/30 transition-colors mx-auto">
+                  <div className="w-12 h-12 rounded-[6px] bg-[#1A9EC9]/20 border border-[#1A9EC9]/30 flex items-center justify-center mb-5 group-hover:bg-[#1A9EC9]/30 transition-colors mx-auto sm:mx-0">
                     <Icon size={22} className="text-[#1A9EC9]" />
                   </div>
                   <h3 className="font-medium text-sm mb-3" style={{ color: "#FFFFFF" }}>

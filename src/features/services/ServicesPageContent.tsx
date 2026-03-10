@@ -54,7 +54,7 @@ export function ServicesPageContent() {
                     className="group bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow h-full flex flex-col"
                   >
                     <div
-                      className="w-14 h-14 rounded-[6px] flex items-center justify-center mb-5 mx-auto"
+                      className="w-14 h-14 rounded-[6px] flex items-center justify-center mb-5 mx-auto sm:mx-0"
                       style={{ background: service.bgColor }}
                     >
                       <Icon size={26} style={{ color: service.color }} />

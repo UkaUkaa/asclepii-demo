@@ -70,7 +70,7 @@ export function DoctorsSection() {
                       <span>{doctor.experience} {doctorsT("experience")}</span>
                       <span>{doctor.reviewCount} {locale === "uk" ? "відгуків" : "reviews"}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[#0D3A7E] text-xs font-medium opacity-0 group-hover:opacity-100 transition-all">
+                    <div className="flex items-center gap-1.5 text-[#0D3A7E] text-xs font-medium opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all">
                       <Calendar size={12} />
                       <span>{doctorsT("bookAppointment")}</span>
                     </div>

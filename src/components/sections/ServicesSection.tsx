@@ -55,7 +55,7 @@ export function ServicesSection() {
                     className="group bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow cursor-pointer h-full"
                   >
                     <div
-                      className="w-12 h-12 rounded-[6px] flex items-center justify-center mb-5 transition-transform group-hover:scale-110 mx-auto"
+                      className="w-12 h-12 rounded-[6px] flex items-center justify-center mb-5 transition-transform group-hover:scale-110 mx-auto sm:mx-0"
                       style={{ background: service.bgColor }}
                     >
                       <Icon size={22} style={{ color: service.color }} />
@@ -66,7 +66,7 @@ export function ServicesSection() {
                     <p className="text-[#4A6180] text-xs font-light leading-relaxed">
                       {desc}
                     </p>
-                    <div className="mt-4 flex items-center gap-1 text-[#1A9EC9] text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="mt-4 flex items-center gap-1 text-[#1A9EC9] text-xs font-medium opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                       <span>{locale === "uk" ? "Дізнатись більше" : "Learn more"}</span>
                       <ArrowRight size={12} />
                     </div>

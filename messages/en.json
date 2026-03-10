@@ -1,0 +1,297 @@
+{
+  "nav": {
+    "services": "Services",
+    "directions": "Directions",
+    "posluhy": "Services",
+    "prices": "Prices",
+    "news": "News & Promotions",
+    "analyses": "Analyses",
+    "declaration": "Sign Declaration",
+    "about": "About Us",
+    "contacts": "Contacts",
+    "doctors": "Doctors",
+    "signIn": "Sign In",
+    "dashboard": "Dashboard"
+  },
+  "header": {
+    "tagline": "Your health is our priority",
+    "bookButton": "Book Appointment",
+    "phones": {
+      "reception": "Reception",
+      "diagnostic": "Diagnostic Center",
+      "pediatrics": "Pediatrics"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Next Generation\nMedicine",
+      "subtitle": "Ukraine's leading medical clinic with 25 years of experience. State-of-the-art equipment, a team of qualified specialists, and a personalized approach to every patient.",
+      "cta": "Reserve time for your health",
+      "stats": {
+        "patients": "Satisfied Patients",
+        "doctors": "Expert Doctors",
+        "experience": "Years of Experience",
+        "services": "Medical Services"
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive medical care from Ukraine's leading specialists"
+    },
+    "doctors": {
+      "title": "Our Doctors",
+      "subtitle": "A team of qualified specialists with extensive experience",
+      "viewAll": "View all doctors"
+    },
+    "booking": {
+      "title": "Reserve time for your health",
+      "subtitle": "Quick and convenient online booking"
+    },
+    "news": {
+      "title": "News & Promotions",
+      "subtitle": "Latest updates and special offers from our clinic",
+      "viewAll": "All news"
+    },
+    "why": {
+      "title": "Why Choose Asklepiy",
+      "features": {
+        "modern": {
+          "title": "Modern Equipment",
+          "desc": "Medical technology from world's leading manufacturers for precise diagnostics"
+        },
+        "team": {
+          "title": "Expert Team",
+          "desc": "Doctors with decades of experience and international certifications"
+        },
+        "care": {
+          "title": "Personalized Care",
+          "desc": "Individualized treatment plans for each patient"
+        },
+        "digital": {
+          "title": "Digital Office",
+          "desc": "Online booking, test results, and medical records on your phone"
+        }
+      }
+    }
+  },
+  "services": {
+    "title": "Medical Services",
+    "subtitle": "Full spectrum of medical services under one roof",
+    "items": {
+      "cardiology": { "name": "Cardiology", "desc": "Diagnosis and treatment of cardiovascular diseases" },
+      "neurology": { "name": "Neurology", "desc": "Treatment of nervous system disorders" },
+      "gynecology": { "name": "Gynecology", "desc": "Comprehensive women's health care" },
+      "pediatrics": { "name": "Pediatrics", "desc": "Medical care for children from birth to 18 years" },
+      "orthopedics": { "name": "Orthopedics", "desc": "Treatment of musculoskeletal disorders" },
+      "ophthalmology": { "name": "Ophthalmology", "desc": "Diagnosis and treatment of eye diseases" },
+      "dermatology": { "name": "Dermatology", "desc": "Skin disease treatment and cosmetology" },
+      "gastro": { "name": "Gastroenterology", "desc": "Treatment of digestive system diseases" },
+      "endocrinology": { "name": "Endocrinology", "desc": "Diagnosis and treatment of hormonal disorders" },
+      "urology": { "name": "Urology", "desc": "Treatment of urological diseases" },
+      "surgery": { "name": "Surgery", "desc": "Modern surgical treatment methods" },
+      "diagnostics": { "name": "Diagnostics", "desc": "Ultrasound, MRI, CT and laboratory diagnostics" }
+    }
+  },
+  "doctors": {
+    "title": "Our Doctors",
+    "subtitle": "Our team of leading specialists is ready to help you",
+    "bookAppointment": "Book Appointment",
+    "experience": "years experience",
+    "education": "Education",
+    "specializations": "Specializations",
+    "languages": "Languages",
+    "schedule": "Schedule",
+    "search": "Search doctor",
+    "filterBy": "Filter by specialty",
+    "all": "All"
+  },
+  "booking": {
+    "title": "Book Appointment",
+    "steps": {
+      "service": "Select Service",
+      "doctor": "Choose Doctor",
+      "time": "Choose Time",
+      "confirm": "Confirmation"
+    },
+    "selectService": "Select medical service",
+    "selectDoctor": "Select specialist",
+    "selectDate": "Select date and time",
+    "confirmBooking": "Confirm booking",
+    "searching": "Finding the best specialist for you...",
+    "suggestions": {
+      "soonest": "Soonest available",
+      "morning": "Morning appointment",
+      "familiar": "Your previous doctor"
+    },
+    "name": "Your name",
+    "phone": "Phone number",
+    "email": "Email address",
+    "notes": "Comment (optional)",
+    "submit": "Reserve time",
+    "success": "Appointment booked successfully!",
+    "successMsg": "We will contact you to confirm",
+    "next": "Next",
+    "back": "Back"
+  },
+  "dashboard": {
+    "title": "Patient Dashboard",
+    "welcome": "Welcome",
+    "family": {
+      "title": "Family Profile",
+      "me": "Me",
+      "child": "Child",
+      "partner": "Partner"
+    },
+    "appointments": {
+      "title": "Appointments",
+      "upcoming": "Upcoming",
+      "past": "Past",
+      "book": "Book Again",
+      "cancel": "Cancel",
+      "noUpcoming": "No upcoming appointments"
+    },
+    "results": {
+      "title": "Medical Results",
+      "download": "Download",
+      "aiInterpretation": "AI Interpretation"
+    },
+    "history": {
+      "title": "History of Wellness",
+      "subtitle": "Timeline of your medical events"
+    },
+    "documents": {
+      "title": "Document Vault",
+      "upload": "Upload Document",
+      "noDocuments": "No documents available"
+    }
+  },
+  "auth": {
+    "signIn": "Sign In to Your Account",
+    "signInSubtitle": "Sign in to access your medical records",
+    "email": "Email address",
+    "phone": "Phone number",
+    "password": "Password",
+    "googleSignIn": "Sign in with Google",
+    "emailSignIn": "Sign in with Email",
+    "phoneSignIn": "Sign in with Phone",
+    "sendCode": "Send Code",
+    "verifyCode": "Verify Code",
+    "smsCode": "SMS Code",
+    "enterCode": "Enter 6-digit code",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "forgotPassword": "Forgot password?"
+  },
+  "prices": {
+    "title": "Price List",
+    "subtitle": "Transparent pricing for all medical services",
+    "consultation": "Consultation",
+    "diagnostics": "Diagnostics",
+    "procedures": "Procedures",
+    "analyses": "Analyses",
+    "currency": "UAH",
+    "from": "from"
+  },
+  "news": {
+    "title": "News & Promotions",
+    "subtitle": "Stay up to date with clinic events",
+    "readMore": "Read more",
+    "promotions": "Promotions",
+    "clinicNews": "Clinic News"
+  },
+  "analyses": {
+    "title": "Laboratory Analyses",
+    "subtitle": "Wide range of laboratory diagnostics",
+    "search": "Search analysis",
+    "orderOnline": "Order Online",
+    "general": "General Tests",
+    "biochemistry": "Biochemistry",
+    "hormones": "Hormones",
+    "immunology": "Immunology",
+    "microbiology": "Microbiology"
+  },
+  "declaration": {
+    "title": "Sign Declaration",
+    "subtitle": "Choose a family doctor and sign the declaration online",
+    "steps": {
+      "doctor": "Choose Doctor",
+      "documents": "Documents",
+      "sign": "Sign"
+    },
+    "chooseDoctor": "Choose a family doctor",
+    "uploadDocs": "Upload required documents",
+    "signDeclaration": "Sign the declaration"
+  },
+  "about": {
+    "title": "About Asklepiy Clinic",
+    "subtitle": "25 years protecting your health",
+    "history": "Our History",
+    "mission": "Our Mission",
+    "values": "Our Values",
+    "team": "Our Team",
+    "certificates": "Certificates & Accreditation",
+    "missionText": "We strive to provide every patient with access to quality medical care using the most modern technologies and a personalized approach.",
+    "stats": {
+      "founded": "Year Founded",
+      "patients": "Patients per Year",
+      "doctors": "Medical Specialists",
+      "departments": "Medical Departments"
+    }
+  },
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "We are located in the center of Kharkiv",
+    "address": "Address",
+    "addressValue": "31 Yaroslava Mudrogo St., Kharkiv, 61000",
+    "workingHours": "Working Hours",
+    "weekdays": "Monday–Friday",
+    "weekdaysHours": "08:00 – 20:00",
+    "saturday": "Saturday",
+    "saturdayHours": "09:00 – 17:00",
+    "sunday": "Sunday",
+    "sundayHours": "10:00 – 15:00",
+    "reception": "Reception",
+    "diagnostic": "Diagnostic Center",
+    "pediatrics": "Pediatrics",
+    "email": "Email",
+    "getDirections": "Get Directions",
+    "writeUs": "Write to Us"
+  },
+  "ai": {
+    "title": "Asklepiy AI",
+    "greeting": "Hello! I am Asklepiy AI. I know everything about our clinic. How can I help you today?",
+    "placeholder": "Ask a question or describe your symptoms...",
+    "send": "Send",
+    "thinking": "Analyzing...",
+    "suggestions": {
+      "gynecology": "I see you're interested in women's health. Would you like to see the schedule of our gynecologist?",
+      "back": "For back pain, we recommend a vertebrologist consultation or spinal MRI.",
+      "general": "I can help with booking appointments, finding service information, or answering questions."
+    }
+  },
+  "footer": {
+    "tagline": "Next Generation Medicine",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "social": "Follow us"
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "close": "Close",
+    "open": "Open",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "language": "Language",
+    "ukrainian": "Українська",
+    "english": "English"
+  }
+}

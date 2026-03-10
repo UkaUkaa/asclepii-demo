@@ -67,7 +67,7 @@ export default function DeclarationPage() {
       </div>
 
       <section className="section-padding bg-white">
-        <div className="container-clinic max-w-2xl">
+        <div className="w-full max-w-2xl mx-auto px-6">
           {/* Progress */}
           <div className="flex items-center justify-between mb-10 relative">
             <div className="absolute top-5 left-8 right-8 h-px bg-[#D6E3F0]" />

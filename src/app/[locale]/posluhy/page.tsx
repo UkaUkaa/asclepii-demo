@@ -212,7 +212,7 @@ export default function PoslugyPage() {
       {/* ── Hero ── */}
       <div className="bg-[#F2F6FB] border-b border-[#D6E3F0]">
         <div className="container-clinic py-10 lg:py-12">
-          <span className="inline-block px-2.5 py-1 bg-[#E6F7FC] text-[#1A9EC9] text-[10px] font-medium uppercase tracking-widest rounded-[4px] mb-3">
+          <span className="inline-block px-3 py-1 text-xs font-medium text-[#0D3A7E] bg-[#EEF3FB] border border-[#ABC6EB] rounded-[4px] uppercase tracking-wider mb-3">
             {locale === "uk" ? "Прозорі ціни" : "Transparent Pricing"}
           </span>
           <h1 className="text-3xl lg:text-4xl font-light text-[#0C1929] tracking-tight mb-2">

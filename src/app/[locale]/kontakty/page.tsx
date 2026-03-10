@@ -6,17 +6,18 @@ import { useTranslations, useLocale } from "next-intl";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 import { Input, Textarea } from "@/components/ui/Input";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 
-const CLINIC_COORDS = { lat: 49.9935, lng: 36.2304 };
+const CLINIC_COORDS = { lat: 50.2549, lng: 28.6609 };
 
 export default function ContactsPage() {
   const t = useTranslations("contacts");
   const locale = useLocale() as "uk" | "en";
 
   const PHONES = [
-    { key: "reception", number: "+38 (057) 000-00-01" },
-    { key: "diagnostic", number: "+38 (057) 000-00-02" },
-    { key: "pediatrics", number: "+38 (057) 000-00-03" },
+    { key: "reception", number: "+38 (098) 046-33-03" },
+    { key: "diagnostic", number: "+38 (095) 010-31-03" },
+    { key: "pediatrics", number: "+38 (093) 170-01-03" },
   ];
 
   return (
@@ -34,9 +35,9 @@ export default function ContactsPage() {
 
       <section className="section-padding bg-white">
         <div className="container-clinic">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
             {/* Left: Contact info */}
-            <div className="space-y-6">
+            <div className="flex flex-col gap-6">
               {/* Address */}
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
@@ -52,7 +53,7 @@ export default function ContactsPage() {
                     <h3 className="text-sm font-medium text-[#0C1929] mb-1">{t("address")}</h3>
                     <p className="text-[#4A6180] font-light text-sm">{t("addressValue")}</p>
                     <a
-                      href={`https://maps.google.com/?q=${CLINIC_COORDS.lat},${CLINIC_COORDS.lng}`}
+                      href="https://maps.google.com/?q=вул.+Покровська,+31,+Житомир"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 mt-2 text-xs text-[#1A9EC9] hover:text-[#0D3A7E] transition-colors font-medium"
@@ -119,9 +120,10 @@ export default function ContactsPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.16 }}
-                className="bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)]"
+                className="flex-1 flex flex-col"
               >
-                <div className="flex items-start gap-4">
+                <div className="bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)] flex-1 flex flex-col">
+                <div className="flex items-start gap-4 flex-1">
                   <div className="w-10 h-10 rounded-[6px] bg-[#EEF3FB] flex items-center justify-center flex-shrink-0">
                     <Clock size={16} className="text-[#0D3A7E]" />
                   </div>
@@ -141,11 +143,12 @@ export default function ContactsPage() {
                     </div>
                   </div>
                 </div>
+                </div>
               </motion.div>
             </div>
 
             {/* Right: Map + Contact form */}
-            <div className="space-y-6">
+            <div className="flex flex-col gap-6">
               {/* Map embed */}
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
@@ -154,7 +157,7 @@ export default function ContactsPage() {
                 className="rounded-[6px] overflow-hidden border border-[#D6E3F0] shadow-[0_2px_20px_rgba(13,58,126,0.06)] h-72 bg-[#EEF3FB] flex items-center justify-center"
               >
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.5!2d36.2304!3d49.9935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDU5JzM2LjYiTiAzNsKwMTMnNDkuNCJF!5e0!3m2!1suk!2sua!4v1699900000000!5m2!1suk!2sua"
+                  src="https://maps.google.com/maps?q=вул.+Покровська+31+Житомир&output=embed&hl=uk"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -170,13 +173,13 @@ export default function ContactsPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.25 }}
-                className="bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)]"
+                className="bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)] flex-1"
               >
                 <h3 className="text-lg font-light text-[#0C1929] mb-6">{t("writeUs")}</h3>
                 <div className="space-y-4">
                   <div className="grid sm:grid-cols-2 gap-4">
                     <Input label={locale === "uk" ? "Ваше ім'я" : "Your name"} placeholder={locale === "uk" ? "Ім'я та прізвище" : "First and last name"} />
-                    <Input label={locale === "uk" ? "Телефон" : "Phone"} placeholder="+38 (0__) ___-__-__" type="tel" />
+                    <PhoneInput label={locale === "uk" ? "Телефон" : "Phone"} id="phone" />
                   </div>
                   <Input label={locale === "uk" ? "Email" : "Email"} placeholder="email@example.com" type="email" />
                   <Textarea

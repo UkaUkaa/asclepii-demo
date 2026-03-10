@@ -125,8 +125,7 @@ export function HeroSection() {
                   src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop"
                   alt="Modern medical clinic"
                   className="w-full h-[520px] object-cover"
-                  loading="eager"
-                  fetchPriority="high"
+                  loading="lazy"
                   decoding="async"
                   width={800}
                   height={520}

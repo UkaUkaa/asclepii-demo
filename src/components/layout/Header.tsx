@@ -71,7 +71,7 @@ export function Header() {
             : "bg-transparent",
           mobileOpen && "opacity-0 pointer-events-none"
         )}
-        initial={{ y: -80 }}
+        initial={false}
         animate={{ y: 0 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       >

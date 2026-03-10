@@ -53,7 +53,7 @@ export function Header() {
 
   const toggleLocale = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    router.replace({ pathname: pathname as any, params }, { locale: locale === "uk" ? "en" : "uk" });
+    router.replace({ pathname: pathname as any, params: params as any }, { locale: locale === "uk" ? "en" : "uk" });
   };
 
   return (

@@ -1,28 +1,19 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform, type Variants } from "framer-motion";
-import { Calendar, ChevronRight, Shield, Award, Clock, Star } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { Calendar, ChevronRight, Star } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/Button";
 
 const STATS = [
-  { value: "50,000+", key: "patients", icon: Shield },
-  { value: "50+", key: "doctors", icon: Award },
-  { value: "25", key: "experience", icon: Clock },
-  { value: "30+", key: "services", icon: Calendar },
+  { value: "50,000+", key: "patients" },
+  { value: "50+", key: "doctors" },
+  { value: "25", key: "experience" },
+  { value: "30+", key: "services" },
 ];
 
-const staggerContainer: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
-};
 
 export function HeroSection() {
   const t = useTranslations("home.hero");
@@ -30,8 +21,7 @@ export function HeroSection() {
   const navT = useTranslations("nav");
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-  const titleY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
 
   return (
     <section ref={ref} className="relative overflow-hidden bg-[#F2F6FB] min-h-[85vh] flex items-center">
@@ -54,25 +44,17 @@ export function HeroSection() {
       <div className="container-clinic relative z-10 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            animate="show"
-            style={{ y: titleY }}
-          >
+          <div>
             {/* Badge */}
-            <motion.div variants={fadeUp} className="inline-flex items-center gap-2 mb-6">
+            <div className="inline-flex items-center gap-2 mb-6">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/80 border border-[#D6E3F0] rounded-[4px] text-xs text-[#0D3A7E] font-medium shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
                 {locale === "uk" ? "Відкрито зараз" : "Open Now"}
               </span>
-            </motion.div>
+            </div>
 
             {/* Title */}
-            <motion.h1
-              variants={fadeUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#0C1929] leading-[1.1] mb-6"
-            >
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light text-[#0C1929] leading-[1.1] mb-6">
               {t("title").split("\n").map((line, i) => (
                 <span key={i}>
                   {i === 1 ? (
@@ -83,18 +65,15 @@ export function HeroSection() {
                   {i === 0 && <br />}
                 </span>
               ))}
-            </motion.h1>
+            </h1>
 
             {/* Subtitle */}
-            <motion.p
-              variants={fadeUp}
-              className="text-[#4A6180] text-lg font-light leading-relaxed mb-8 max-w-lg"
-            >
+            <p className="text-[#4A6180] text-lg font-light leading-relaxed mb-8 max-w-lg">
               {t("subtitle")}
-            </motion.p>
+            </p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 mb-12">
               <Link href="/napryamky" className="sm:w-auto w-full">
                 <Button
                   variant="primary"
@@ -116,11 +95,11 @@ export function HeroSection() {
                   {navT("doctors")}
                 </Button>
               </Link>
-            </motion.div>
+            </div>
 
             {/* Stats */}
-            <motion.div variants={fadeUp} className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {STATS.map(({ value, key, icon: Icon }) => (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {STATS.map(({ value, key }) => (
                 <div key={key} className="flex flex-col gap-1">
                   <div className="text-2xl font-light text-[#0D3A7E]">{value}</div>
                   <div className="text-xs text-[#4A6180] font-light leading-snug">
@@ -128,8 +107,8 @@ export function HeroSection() {
                   </div>
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Right image */}
           <motion.div

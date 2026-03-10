@@ -22,7 +22,7 @@ export const DOCTORS: Doctor[] = [
     name: { uk: "Коваленко Олена Іванівна", en: "Olena Kovalenko" },
     specialty: { uk: "Кардіолог", en: "Cardiologist" },
     experience: 18,
-    photo: "https://randomuser.me/api/portraits/women/44.jpg",
+    photo: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&q=85&fit=crop&crop=face",
     bio: {
       uk: "Досвідчений кардіолог з 18-річним стажем. Спеціалізується на діагностиці та лікуванні ішемічної хвороби серця, гіпертонії та аритмій. Автор понад 30 наукових публікацій.",
       en: "Experienced cardiologist with 18 years of practice. Specializes in diagnosis and treatment of coronary artery disease, hypertension, and arrhythmias. Author of over 30 scientific publications.",
@@ -47,7 +47,7 @@ export const DOCTORS: Doctor[] = [
     name: { uk: "Петренко Микола Сергійович", en: "Mykola Petrenko" },
     specialty: { uk: "Невролог", en: "Neurologist" },
     experience: 22,
-    photo: "https://randomuser.me/api/portraits/men/32.jpg",
+    photo: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&q=85&fit=crop&crop=face",
     bio: {
       uk: "Провідний невролог клініки з 22-річним досвідом. Спеціаліст з діагностики та лікування захворювань центральної та периферичної нервової системи, хронічних головних болей та мігрені.",
       en: "Lead neurologist with 22 years of experience. Specialist in diagnosing and treating central and peripheral nervous system disorders, chronic headaches, and migraines.",
@@ -72,7 +72,7 @@ export const DOCTORS: Doctor[] = [
     name: { uk: "Марченко Ірина Олексіївна", en: "Iryna Marchenko" },
     specialty: { uk: "Гінеколог", en: "Gynecologist" },
     experience: 15,
-    photo: "https://randomuser.me/api/portraits/women/28.jpg",
+    photo: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=400&q=85&fit=crop&crop=face",
     bio: {
       uk: "Гінеколог вищої категорії з 15-річним досвідом роботи. Спеціалізується на репродуктивному здоров'ї, ведені вагітності та малоінвазивній гінекологічній хірургії.",
       en: "Senior gynecologist with 15 years of experience. Specializes in reproductive health, pregnancy management, and minimally invasive gynecological surgery.",
@@ -97,7 +97,7 @@ export const DOCTORS: Doctor[] = [
     name: { uk: "Шевченко Володимир Олегович", en: "Volodymyr Shevchenko" },
     specialty: { uk: "Педіатр", en: "Pediatrician" },
     experience: 12,
-    photo: "https://randomuser.me/api/portraits/men/52.jpg",
+    photo: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=400&h=400&q=85&fit=crop&crop=face",
     bio: {
       uk: "Дитячий лікар з 12-річним досвідом. Спеціалізується на загальній педіатрії, дитячій кардіології та профілактичній медицині.",
       en: "Pediatrician with 12 years of experience. Specializes in general pediatrics, pediatric cardiology, and preventive medicine.",
@@ -122,7 +122,7 @@ export const DOCTORS: Doctor[] = [
     name: { uk: "Бондаренко Тетяна Василівна", en: "Tetiana Bondarenko" },
     specialty: { uk: "Ортопед-травматолог", en: "Orthopedic Surgeon" },
     experience: 20,
-    photo: "https://randomuser.me/api/portraits/women/60.jpg",
+    photo: "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&h=400&q=85&fit=crop&crop=face",
     bio: {
       uk: "Ортопед-травматолог вищої категорії. 20 років практики в лікуванні захворювань і травм опорно-рухового апарату. Спеціаліст з ендопротезування суглобів.",
       en: "Senior orthopedic surgeon with 20 years of experience treating musculoskeletal disorders and injuries. Joint arthroplasty specialist.",
@@ -147,7 +147,7 @@ export const DOCTORS: Doctor[] = [
     name: { uk: "Лисенко Андрій Павлович", en: "Andriy Lysenko" },
     specialty: { uk: "Офтальмолог", en: "Ophthalmologist" },
     experience: 14,
-    photo: "https://randomuser.me/api/portraits/men/67.jpg",
+    photo: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&q=85&fit=crop&crop=face",
     bio: {
       uk: "Офтальмолог з 14-річним досвідом. Сертифікований спеціаліст з лазерної корекції зору та лікування катаракти. Виконав понад 3000 успішних операцій.",
       en: "Ophthalmologist with 14 years of experience. Certified specialist in laser vision correction and cataract surgery. Performed over 3,000 successful operations.",

@@ -51,15 +51,15 @@ export function DoctorProfileContent({ doctor, locale }: DoctorProfileContentPro
       {/* Hero */}
       <section className="bg-[#F2F6FB] pb-0">
         <div className="container-clinic py-12">
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid lg:grid-cols-3 gap-10 items-stretch">
             {/* Left: Photo + quick info */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-1"
+              className="lg:col-span-1 flex flex-col"
             >
-              <div className="bg-white border border-[#D6E3F0] rounded-[6px] overflow-hidden shadow-[0_4px_30px_rgba(13,58,126,0.08)] sticky top-[110px]">
+              <div className="bg-white border border-[#D6E3F0] rounded-[6px] overflow-hidden shadow-[0_4px_30px_rgba(13,58,126,0.08)] flex flex-col h-full">
                 {/* Photo */}
                 <div className="relative h-72">
                   <img
@@ -76,11 +76,11 @@ export function DoctorProfileContent({ doctor, locale }: DoctorProfileContentPro
                 </div>
 
                 {/* Info */}
-                <div className="p-5">
+                <div className="p-5 flex flex-col flex-1">
                   <h1 className="text-xl font-light text-[#0C1929] mb-1">{doctor.name[locale]}</h1>
                   <p className="text-[#1A9EC9] text-sm font-light mb-4">{doctor.specialty[locale]}</p>
 
-                  <div className="space-y-3 mb-5">
+                  <div className="space-y-3 mb-5 flex-1">
                     <div className="flex items-center gap-3 text-sm text-[#4A6180] font-light">
                       <Clock size={14} className="text-[#8298B0]" />
                       <span>{doctor.experience} {t("experience")}</span>
@@ -91,7 +91,7 @@ export function DoctorProfileContent({ doctor, locale }: DoctorProfileContentPro
                     </div>
                     <div className="flex items-center gap-3 text-sm text-[#4A6180] font-light">
                       <MapPin size={14} className="text-[#8298B0]" />
-                      <span>{locale === "uk" ? "Клініка Asklepiy, Харків" : "Asklepiy Clinic, Kharkiv"}</span>
+                      <span>{locale === "uk" ? "Клініка Асклепій, Житомир" : "Asklepiy Clinic, Zhytomyr"}</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-[#4A6180] font-light">
                       <Languages size={14} className="text-[#8298B0]" />
@@ -111,7 +111,7 @@ export function DoctorProfileContent({ doctor, locale }: DoctorProfileContentPro
               initial={{ opacity: 0, x: 24 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="lg:col-span-2 space-y-6"
+              className="lg:col-span-2 flex flex-col space-y-6"
             >
               {/* Bio */}
               <div className="bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)]">
@@ -145,7 +145,7 @@ export function DoctorProfileContent({ doctor, locale }: DoctorProfileContentPro
               </div>
 
               {/* Specializations */}
-              <div className="bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)]">
+              <div className="bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)] flex-1">
                 <h2 className="text-lg font-light text-[#0C1929] mb-4 pb-3 border-b border-[#EBF1F8]">
                   {t("specializations")}
                 </h2>

@@ -88,7 +88,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, locale, onToggleLocale, 
             {/* Phone numbers */}
             <div className="p-6">
               <p className="text-white/40 text-xs uppercase tracking-widest mb-4 font-light">
-                Телефони
+                {locale === "uk" ? "Телефони" : "Phone Numbers"}
               </p>
               <div className="space-y-3">
                 {(

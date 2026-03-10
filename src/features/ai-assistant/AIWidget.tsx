@@ -177,12 +177,12 @@ export function AIWidget() {
             initial={{ opacity: 0, y: 10, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
-            className="glass rounded-[6px] px-4 py-2.5 shadow-[0_4px_20px_rgba(13,58,126,0.15)] border border-white/50 max-w-[200px] cursor-pointer"
+            // className="glass rounded-[6px] px-4 py-2.5 shadow-[0_4px_20px_rgba(13,58,126,0.15)] border border-white/50 max-w-[200px] cursor-pointer"
             onClick={() => { setIsOpen(true); setShowHint(false); }}
           >
-            <p className="text-xs text-[#0C1929] font-light leading-relaxed">
+            {/* <p className="text-xs text-[#0C1929] font-light leading-relaxed">
               {locale === "uk" ? "Маю питання? Запитайте мене!" : "Have questions? Ask me!"}
-            </p>
+            </p> */}
           </motion.div>
         )}
       </AnimatePresence>

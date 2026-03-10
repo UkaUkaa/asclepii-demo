@@ -64,7 +64,7 @@ export function HeroSection() {
             <motion.div variants={fadeUp} className="inline-flex items-center gap-2 mb-6">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/80 border border-[#D6E3F0] rounded-[4px] text-xs text-[#0D3A7E] font-medium shadow-sm">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                {locale === "uk" ? "Харків · Відкрито зараз" : "Kharkiv · Open Now"}
+                {locale === "uk" ? "Відкрито зараз" : "Open Now"}
               </span>
             </motion.div>
 
@@ -94,12 +94,12 @@ export function HeroSection() {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mb-12">
+            <motion.div variants={fadeUp} className="flex flex-row flex-wrap gap-3 mb-12">
               <Link href="/napryamky">
                 <Button
                   variant="primary"
-                  size="lg"
-                  icon={<Calendar size={17} />}
+                  size="md"
+                  icon={<Calendar size={16} />}
                   className="whitespace-nowrap"
                 >
                   {t("cta")}
@@ -108,9 +108,10 @@ export function HeroSection() {
               <Link href="/likari">
                 <Button
                   variant="outline"
-                  size="lg"
-                  icon={<ChevronRight size={17} />}
+                  size="md"
+                  icon={<ChevronRight size={16} />}
                   iconPosition="right"
+                  className="whitespace-nowrap"
                 >
                   {navT("doctors")}
                 </Button>
@@ -154,7 +155,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
-                className="absolute -left-8 top-1/4 glass rounded-[6px] px-4 py-3 shadow-[0_8px_30px_rgba(13,58,126,0.15)] border border-white/50 max-w-[180px]"
+                className="absolute -left-8 top-1/4 glass rounded-[6px] px-4 py-3 shadow-[0_8px_30px_rgba(13,58,126,0.15)] border border-white/50 w-[160px]"
               >
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2 h-2 rounded-full bg-[#10B981]" />
@@ -173,7 +174,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.5 }}
-                className="absolute -right-6 bottom-1/3 glass rounded-[6px] px-4 py-3 shadow-[0_8px_30px_rgba(13,58,126,0.15)] border border-white/50"
+                className="absolute -right-6 bottom-1/3 glass rounded-[6px] px-4 py-3 shadow-[0_8px_30px_rgba(13,58,126,0.15)] border border-white/50 w-[160px]"
               >
                 <div className="text-xs text-[#4A6180] font-light mb-1">
                   {locale === "uk" ? "Рейтинг клініки" : "Clinic Rating"}

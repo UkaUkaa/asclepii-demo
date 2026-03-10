@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Monitor, Users, Heart, Smartphone } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 const ICONS = [Monitor, Users, Heart, Smartphone];
@@ -10,6 +10,7 @@ const FEATURE_KEYS = ["modern", "team", "care", "digital"];
 
 export function WhySection() {
   const t = useTranslations("home.why");
+  const locale = useLocale();
 
   return (
     <section className="section-padding bg-[#0C1929] text-white overflow-hidden relative">
@@ -42,16 +43,17 @@ export function WhySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                className="h-full"
               >
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="group p-6 rounded-[6px] border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/8 transition-all"
+                  className="group p-6 rounded-[6px] border border-white/10 hover:border-white/20 bg-white/5 hover:bg-white/8 transition-all h-full"
                 >
                   <div className="w-12 h-12 rounded-[6px] bg-[#1A9EC9]/20 border border-[#1A9EC9]/30 flex items-center justify-center mb-5 group-hover:bg-[#1A9EC9]/30 transition-colors">
                     <Icon size={22} className="text-[#1A9EC9]" />
                   </div>
-                  <h3 className="text-white font-medium text-sm mb-3">
+                  <h3 className="font-medium text-sm mb-3" style={{ color: "#FFFFFF" }}>
                     {t(`features.${key}.title`)}
                   </h3>
                   <p className="text-white/50 text-sm font-light leading-relaxed">
@@ -72,14 +74,14 @@ export function WhySection() {
           className="mt-14 pt-10 border-t border-white/10 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center"
         >
           {[
-            { val: "99.2%", label: "Точність діагностики" },
-            { val: "<15 хв", label: "Час очікування" },
-            { val: "4.9 / 5", label: "Середній рейтинг" },
-            { val: "ISO 9001", label: "Сертифікація" },
-          ].map(({ val, label }) => (
-            <div key={label}>
-              <div className="text-3xl font-light text-[#1A9EC9] mb-1">{val}</div>
-              <div className="text-white/40 text-xs font-light">{label}</div>
+            { valUk: "99.2%", valEn: "99.2%", uk: "Точність діагностики", en: "Diagnostic Accuracy" },
+            { valUk: "<15 хв", valEn: "<15 min", uk: "Час очікування", en: "Wait Time" },
+            { valUk: "4.9 / 5", valEn: "4.9 / 5", uk: "Середній рейтинг", en: "Average Rating" },
+            { valUk: "ISO 9001", valEn: "ISO 9001", uk: "Сертифікація", en: "Certification" },
+          ].map(({ valUk, valEn, uk, en }) => (
+            <div key={uk}>
+              <div className="text-3xl font-light text-[#1A9EC9] mb-1">{locale === "uk" ? valUk : valEn}</div>
+              <div className="text-white/40 text-xs font-light">{locale === "uk" ? uk : en}</div>
             </div>
           ))}
         </motion.div>

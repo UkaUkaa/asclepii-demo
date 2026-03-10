@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AIWidget } from "@/features/ai-assistant/AIWidget";
 import { QueryProvider } from "@/components/providers/QueryProvider";
+import { ScrollToTop } from "@/components/providers/ScrollToTop";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -44,6 +45,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   return (
     <NextIntlClientProvider messages={messages}>
       <QueryProvider>
+        <ScrollToTop />
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-1 pt-[110px] lg:pt-[126px]">

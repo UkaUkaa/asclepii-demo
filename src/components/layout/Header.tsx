@@ -6,20 +6,22 @@ import Image from "next/image";
 import { Phone, Menu, X, Globe, ChevronDown, Calendar } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { MobileMenu } from "./MobileMenu";
 import { cn } from "@/lib/utils/cn";
 
 const PHONE_NUMBERS = {
-  reception: "+38 (057) 000-00-01",
-  diagnostic: "+38 (057) 000-00-02",
-  pediatrics: "+38 (057) 000-00-03",
+  reception: "+38 (098) 046-33-03",
+  diagnostic: "+38 (095) 010-31-03",
+  pediatrics: "+38 (093) 170-01-03",
 };
 
 export function Header() {
   const t = useTranslations();
   const locale = useLocale();
   const pathname = usePathname();
+  const params = useParams();
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -47,7 +49,7 @@ export function Header() {
 
   const toggleLocale = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    router.replace(pathname as any, { locale: locale === "uk" ? "en" : "uk" });
+    router.replace({ pathname: pathname as any, params }, { locale: locale === "uk" ? "en" : "uk" });
   };
 
   return (
@@ -56,7 +58,7 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "glass border-b border-white/40 shadow-[0_4px_30px_rgba(13,58,126,0.08)]"
+            ? "bg-white border-b border-[#D6E3F0] shadow-[0_4px_30px_rgba(13,58,126,0.08)]"
             : "bg-transparent"
         )}
         initial={{ y: -80 }}

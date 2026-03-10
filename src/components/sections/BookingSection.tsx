@@ -1,10 +1,11 @@
 import { Lock, CheckCircle, Smartphone } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { BookingWizard } from "@/features/booking/BookingWizard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function BookingSection() {
   const t = useTranslations("home.booking");
+  const locale = useLocale();
 
   return (
     <section className="section-padding bg-white">
@@ -28,7 +29,7 @@ export function BookingSection() {
                     {num}
                   </div>
                   <p className="text-[#4A6180] font-light leading-relaxed pt-2">
-                    {uk}
+                    {locale === "uk" ? uk : en}
                   </p>
                 </div>
               ))}
@@ -37,13 +38,13 @@ export function BookingSection() {
             {/* Trust indicators */}
             <div className="mt-10 flex flex-wrap gap-3">
               {[
-                { icon: Lock, label: "Захищені дані" },
-                { icon: CheckCircle, label: "Без передоплати" },
-                { icon: Smartphone, label: "SMS підтвердження" },
-              ].map(({ icon: Icon, label }) => (
-                <span key={label} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F2F6FB] border border-[#D6E3F0] rounded-[4px] text-xs text-[#4A6180] font-light">
+                { icon: Lock, uk: "Захищені дані", en: "Secure Data" },
+                { icon: CheckCircle, uk: "Без передоплати", en: "No Prepayment" },
+                { icon: Smartphone, uk: "SMS підтвердження", en: "SMS Confirmation" },
+              ].map(({ icon: Icon, uk, en }) => (
+                <span key={uk} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F2F6FB] border border-[#D6E3F0] rounded-[4px] text-xs text-[#4A6180] font-light">
                   <Icon size={12} className="text-[#0D3A7E] flex-shrink-0" />
-                  {label}
+                  {locale === "uk" ? uk : en}
                 </span>
               ))}
             </div>

@@ -339,11 +339,11 @@ export default function PoslugyPage() {
                             {locale === "uk" ? "Безкоштовно" : "Free"}
                           </span>
                         )}
-                        <Link href="/napryamky">
+                        <a href="#">
                           <Button variant="secondary" size="sm">
                             {locale === "uk" ? currentTab.ctaUk : currentTab.ctaEn}
                           </Button>
-                        </Link>
+                        </a>
                       </div>
                     </div>
                   );

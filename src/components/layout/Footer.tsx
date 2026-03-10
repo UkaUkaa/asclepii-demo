@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import Image from "next/image";
 
 type AppPath = "/" | "/napryamky" | "/posluhy" | "/likari" | "/deklaratsiya" | "/pro-nas" | "/novyny" | "/kontakty";
 
@@ -28,16 +29,16 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-9 h-9 rounded-[6px] bg-white/10 flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-[#1A9EC9]" aria-hidden>
-                  <path d="M11 8h2v8h-2zm-2 3H7v2h2v3h2v-3h2v-2h-2V8h-2v3z"/>
-                </svg>
-              </div>
-              <div>
-                <div className="text-white font-light text-lg leading-none tracking-wider">ASKLEPIY</div>
-                <div className="text-white/40 text-[10px] uppercase tracking-[0.15em] font-light">Medical Clinic</div>
-              </div>
+            <div className="mb-6">
+              <Link href="/">
+                <Image
+                  src="/logo.webp"
+                  alt="Асклепій — Медичний центр"
+                  width={160}
+                  height={52}
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
+              </Link>
             </div>
             <p className="text-white/50 text-sm font-light leading-relaxed mb-6">
               {t("footer.tagline")}
@@ -117,7 +118,7 @@ export function Footer() {
             <ul className="space-y-4">
               <li>
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.google.com/?q=вул.+Покровська,+31,+Житомир"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 text-white/50 text-sm hover:text-white transition-colors group"
@@ -130,11 +131,11 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+380570000001"
+                  href="tel:+380980463303"
                   className="flex items-center gap-3 text-white/50 text-sm hover:text-white transition-colors group"
                 >
                   <Phone size={14} className="flex-shrink-0 group-hover:text-[#1A9EC9]" />
-                  <span className="font-light">+38 (057) 000-00-01</span>
+                  <span className="font-light">+38 (098) 046-33-03</span>
                 </a>
               </li>
               <li>
@@ -151,7 +152,6 @@ export function Footer() {
                   <Clock size={14} className="mt-0.5 flex-shrink-0" />
                   <div className="font-light space-y-0.5">
                     <div>{t("contacts.weekdays")}: {t("contacts.weekdaysHours")}</div>
-                    <div>{t("contacts.saturday")}: {t("contacts.saturdayHours")}</div>
                     <div>{t("contacts.sunday")}: {t("contacts.sundayHours")}</div>
                   </div>
                 </div>
@@ -166,6 +166,7 @@ export function Footer() {
         <div className="container-clinic py-5">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-white/30 text-xs font-light">
             <span>© {currentYear} Asklepiy Clinic. {t("footer.rights")}.</span>
+            <span>Made by STEPS LAB</span>
             <div className="flex items-center gap-4">
               <a href="#" className="hover:text-white/60 transition-colors">
                 {t("footer.privacy")}

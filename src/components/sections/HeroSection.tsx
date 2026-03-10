@@ -26,7 +26,7 @@ export function HeroSection() {
   return (
     <section ref={ref} className="relative overflow-hidden bg-[#F2F6FB] min-h-[85vh] flex items-center">
       {/* Background geometric shapes */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         <div className="absolute -top-24 -right-24 w-[500px] h-[500px] rounded-full bg-[#EEF3FB] opacity-60" />
         <div className="absolute top-1/3 -left-32 w-[400px] h-[400px] rounded-full bg-[#E6F7FC] opacity-40" />
         <div className="absolute -bottom-16 right-1/4 w-[300px] h-[300px] rounded-full bg-[#EEF3FB] opacity-50" />

@@ -87,11 +87,13 @@ summary {
 }
 
 html {
-  font-size: 20px;
+  font-size: 16px;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -101,6 +103,14 @@ body {
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 20px;
+  }
 }
 
 /* ─── Typography Scale ─── */

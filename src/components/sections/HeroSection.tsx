@@ -41,7 +41,7 @@ export function HeroSection() {
         </svg>
       </div>
 
-      <div className="container-clinic relative z-10 py-24">
+      <div className="container-clinic relative z-10 pt-8 pb-24 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
           <div className="relative z-10">

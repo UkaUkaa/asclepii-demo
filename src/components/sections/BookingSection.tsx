@@ -24,11 +24,11 @@ export function BookingSection() {
                 { num: "02", uk: "Виберіть зручний час прийому", en: "Choose a convenient appointment time" },
                 { num: "03", uk: "Підтвердіть запис — ми зв'яжемось з вами", en: "Confirm booking — we'll contact you" },
               ].map(({ num, uk, en }) => (
-                <div key={num} className="flex items-start gap-4">
+                <div key={num} className="flex items-start gap-2 sm:gap-4">
                   <div className="w-10 h-10 rounded-[6px] bg-[#EEF3FB] border border-[#D5E2F5] flex items-center justify-center text-sm font-medium text-[#0D3A7E] flex-shrink-0">
                     {num}
                   </div>
-                  <p className="text-[#4A6180] font-light leading-relaxed pt-2">
+                  <p className="text-[#4A6180] font-light leading-relaxed pt-2 text-left">
                     {locale === "uk" ? uk : en}
                   </p>
                 </div>

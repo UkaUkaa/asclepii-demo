@@ -35,7 +35,7 @@ export default function ContactsPage() {
 
       <section className="section-padding bg-white">
         <div className="container-clinic">
-          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-stretch">
             {/* Left: Contact info */}
             <div className="flex flex-col gap-6">
               {/* Address */}
@@ -45,11 +45,11 @@ export default function ContactsPage() {
                 transition={{ duration: 0.4 }}
                 className="bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)]"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-5">
                   <div className="w-10 h-10 rounded-[6px] bg-[#EEF3FB] flex items-center justify-center flex-shrink-0">
                     <MapPin size={18} className="text-[#0D3A7E]" />
                   </div>
-                  <div>
+                  <div className="text-left">
                     <h3 className="text-sm font-medium text-[#0C1929] mb-1">{t("address")}</h3>
                     <p className="text-[#4A6180] font-light text-sm">{t("addressValue")}</p>
                     <a
@@ -73,12 +73,12 @@ export default function ContactsPage() {
                 className="bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)] space-y-4"
               >
                 {PHONES.map(({ key, number }) => (
-                  <div key={key} className="flex items-start gap-4">
+                  <div key={key} className="flex items-center gap-5">
                     <div className="w-10 h-10 rounded-[6px] bg-[#EEF3FB] flex items-center justify-center flex-shrink-0">
                       <Phone size={16} className="text-[#0D3A7E]" />
                     </div>
                     <div>
-                      <div className="text-xs text-[#8298B0] font-light mb-0.5">
+                      <div className="text-xs text-[#8298B0] font-light mb-0.5 text-left">
                         {t(key as any)}
                       </div>
                       <a
@@ -99,12 +99,12 @@ export default function ContactsPage() {
                 transition={{ duration: 0.4, delay: 0.12 }}
                 className="bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)]"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-center gap-5">
                   <div className="w-10 h-10 rounded-[6px] bg-[#EEF3FB] flex items-center justify-center flex-shrink-0">
                     <Mail size={16} className="text-[#0D3A7E]" />
                   </div>
                   <div>
-                    <div className="text-xs text-[#8298B0] font-light mb-0.5">{t("email")}</div>
+                    <div className="text-xs text-[#8298B0] font-light mb-0.5 text-left">{t("email")}</div>
                     <a
                       href="mailto:info@asklepiy.com"
                       className="text-sm font-medium text-[#0C1929] hover:text-[#0D3A7E] transition-colors"
@@ -123,11 +123,11 @@ export default function ContactsPage() {
                 className="flex-1 flex flex-col"
               >
                 <div className="bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)] flex-1 flex flex-col">
-                <div className="flex items-start gap-4 flex-1">
+                <div className="flex items-center gap-5 flex-1">
                   <div className="w-10 h-10 rounded-[6px] bg-[#EEF3FB] flex items-center justify-center flex-shrink-0">
                     <Clock size={16} className="text-[#0D3A7E]" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 text-left">
                     <h3 className="text-sm font-medium text-[#0C1929] mb-3">{t("workingHours")}</h3>
                     <div className="space-y-2">
                       {[
@@ -173,7 +173,7 @@ export default function ContactsPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.25 }}
-                className="bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)] flex-1"
+                className="bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)] flex-1 text-left"
               >
                 <h3 className="text-lg font-light text-[#0C1929] mb-6">{t("writeUs")}</h3>
                 <div className="space-y-4">

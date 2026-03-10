@@ -130,6 +130,29 @@ export function AIWidget() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      if (scrollY) window.scrollTo(0, parseInt(scrollY || "0") * -1);
+    }
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   const sendMessage = useCallback(async () => {
     const text = input.trim();
     if (!text || isThinking) return;
@@ -191,12 +214,11 @@ export function AIWidget() {
       <AnimatePresence>
         {isOpen && !isMinimized && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="w-[340px] sm:w-[380px] glass rounded-[6px] shadow-[0_20px_60px_rgba(13,58,126,0.2)] border border-white/50 flex flex-col overflow-hidden"
-            style={{ maxHeight: "520px" }}
+            className="fixed inset-0 sm:static sm:inset-auto w-full sm:w-[380px] glass sm:rounded-[6px] shadow-[0_20px_60px_rgba(13,58,126,0.2)] border-0 sm:border border-white/50 flex flex-col overflow-hidden z-[60] sm:z-50 sm:max-h-[520px]"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-[#D6E3F0]/50 bg-[#0D3A7E]">

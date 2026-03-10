@@ -31,7 +31,7 @@ export function ServicesPageContent() {
       </div>
 
       {/* Services grid */}
-      <section className="section-padding bg-white">
+      <section className="section-padding !pt-8 md:!pt-[var(--spacing-section-sm)] lg:!pt-[var(--spacing-section)] bg-white">
         <div className="container-clinic">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {SERVICES.map((service, i) => {

@@ -15,7 +15,7 @@ export function WhySection() {
   return (
     <section className="section-padding bg-[#0C1929] text-white overflow-hidden relative">
       {/* Background */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full bg-[#0D3A7E]/20 -translate-x-1/2 -translate-y-1/2" />
         <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#1A9EC9]/10 translate-x-1/3 translate-y-1/3" />
       </div>

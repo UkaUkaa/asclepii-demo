@@ -46,9 +46,9 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <NextIntlClientProvider messages={messages}>
       <QueryProvider>
         <ScrollToTop />
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen w-full">
           <Header />
-          <main className="flex-1 pt-[110px] lg:pt-[126px]">
+          <main className="flex-1 pt-[68px] lg:pt-[126px] w-full">
             {children}
           </main>
           <Footer />

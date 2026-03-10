@@ -37,6 +37,11 @@ export function Header() {
     setMobileOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   type AppPath = "/" | "/napryamky" | "/posluhy" | "/likari" | "/novyny" | "/pro-nas" | "/kontakty";
   const navLinks: { href: AppPath; label: string }[] = [
     { href: "/napryamky", label: t("nav.directions") },

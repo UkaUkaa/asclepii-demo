@@ -121,7 +121,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, locale, onToggleLocale, 
             <div className="mx-6 border-t border-white/10" />
 
             {/* Actions */}
-            <div className="p-6 space-y-3">
+            <div className="p-6 flex flex-col gap-3">
               <a
                 href="https://patient-docs.com/login"
                 target="_blank"
@@ -132,7 +132,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, locale, onToggleLocale, 
                 <User size={15} />
                 {t("nav.signIn")}
               </a>
-              <Link href="/napryamky" onClick={onClose}>
+              <Link href="/napryamky" onClick={onClose} className="block">
                 <Button
                   variant="secondary"
                   fullWidth

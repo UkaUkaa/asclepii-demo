@@ -128,7 +128,7 @@
     "phone": "Phone number",
     "email": "Email address",
     "notes": "Comment (optional)",
-    "submit": "Reserve time",
+    "submit": "Book",
     "success": "Appointment booked successfully!",
     "successMsg": "We will contact you to confirm",
     "next": "Next",

@@ -449,6 +449,7 @@ export function BookingWizard() {
         <div className="flex items-center justify-between mt-8 pt-6 border-t border-[#EBF1F8]">
           <Button
             variant="ghost"
+            size="sm"
             onClick={goBack}
             disabled={stepIndex === 0}
             className={stepIndex === 0 ? "invisible" : ""}
@@ -459,9 +460,10 @@ export function BookingWizard() {
           {currentStep === "confirm" ? (
             <Button
               variant="primary"
+              size="sm"
               onClick={handleSubmit}
               loading={isSearching}
-              icon={<Check size={15} />}
+              icon={<Check size={14} />}
               iconPosition="right"
             >
               {t("submit")}
@@ -469,13 +471,14 @@ export function BookingWizard() {
           ) : (
             <Button
               variant="primary"
+              size="sm"
               onClick={goNext}
               disabled={
                 (currentStep === "service" && !booking.serviceKey) ||
                 (currentStep === "doctor" && !booking.doctorId) ||
                 (currentStep === "time" && (!booking.date || !booking.time))
               }
-              icon={<ChevronRight size={15} />}
+              icon={<ChevronRight size={14} />}
               iconPosition="right"
             >
               {t("next")}

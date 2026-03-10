@@ -5,11 +5,9 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import dynamic from "next/dynamic";
 import { QueryProvider } from "@/components/providers/QueryProvider";
 import { ScrollToTop } from "@/components/providers/ScrollToTop";
-
-const AIWidget = dynamic(() => import("@/features/ai-assistant/AIWidget").then(m => ({ default: m.AIWidget })), { ssr: false });
+import { DynamicAIWidget } from "@/components/providers/DynamicAIWidget";
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -55,7 +53,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           </main>
           <Footer />
         </div>
-        <AIWidget />
+        <DynamicAIWidget />
       </QueryProvider>
     </NextIntlClientProvider>
   );

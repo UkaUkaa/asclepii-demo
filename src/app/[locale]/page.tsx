@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import dynamic from "next/dynamic";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { DoctorsSection } from "@/components/sections/DoctorsSection";
-import { BookingSection } from "@/components/sections/BookingSection";
-import { NewsSection } from "@/components/sections/NewsSection";
-import { WhySection } from "@/components/sections/WhySection";
 import { JsonLd } from "@/components/seo/JsonLd";
+
+const ServicesSection = dynamic(() => import("@/components/sections/ServicesSection").then(m => ({ default: m.ServicesSection })));
+const WhySection = dynamic(() => import("@/components/sections/WhySection").then(m => ({ default: m.WhySection })));
+const DoctorsSection = dynamic(() => import("@/components/sections/DoctorsSection").then(m => ({ default: m.DoctorsSection })));
+const BookingSection = dynamic(() => import("@/components/sections/BookingSection").then(m => ({ default: m.BookingSection })));
+const NewsSection = dynamic(() => import("@/components/sections/NewsSection").then(m => ({ default: m.NewsSection })));
 
 export async function generateMetadata({
   params,

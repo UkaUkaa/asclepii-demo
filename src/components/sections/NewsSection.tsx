@@ -34,7 +34,7 @@ export function NewsSection() {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
             >
-              <Link href={{ pathname: "/novyny/[slug]", params: { slug: item.slug } }}>
+              <a href="#">
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
@@ -74,7 +74,7 @@ export function NewsSection() {
                     </div>
                   </div>
                 </motion.div>
-              </Link>
+              </a>
             </motion.article>
           ))}
         </div>

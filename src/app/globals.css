@@ -79,7 +79,15 @@
   box-sizing: border-box;
 }
 
+a, button, label, select,
+[role="button"], [role="link"], [role="tab"], [role="option"], [role="menuitem"], [role="checkbox"], [role="radio"],
+[type="button"], [type="submit"], [type="reset"], [type="file"],
+summary {
+  cursor: pointer;
+}
+
 html {
+  font-size: 20px;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

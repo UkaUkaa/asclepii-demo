@@ -1,16 +1,16 @@
 "use client";
 
-import { forwardRef } from "react";
+import { useState, forwardRef } from "react";
 import { cn } from "@/lib/utils/cn";
 
-interface PhoneInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "type"> {
+interface PhoneInputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "type" | "value" | "defaultValue"> {
   label?: string;
+  value?: string;
   onChange?: (value: string) => void;
 }
 
 function applyMask(raw: string): string {
   const digits = raw.replace(/\D/g, "").slice(0, 12);
-  // Strip leading 38 if user types it
   const d = digits.startsWith("38") ? digits.slice(2) : digits;
 
   let result = "+38 (";
@@ -26,26 +26,39 @@ function applyMask(raw: string): string {
 }
 
 export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
-  ({ label, id, className, onChange, ...props }, ref) => {
+  ({ label, id, className, onChange, value: externalValue, ...props }, ref) => {
+    const [internalValue, setInternalValue] = useState("");
+
+    const value = externalValue !== undefined ? externalValue : internalValue;
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const masked = applyMask(e.target.value);
-      e.target.value = masked;
+      if (externalValue === undefined) setInternalValue(masked);
       onChange?.(masked);
     };
 
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-      const input = e.currentTarget;
-      if (e.key === "Backspace" && input.value === "+38 (") {
+      const v = e.currentTarget.value;
+      if (e.key === "Backspace" && (v === "+38 (" || v === "")) {
         e.preventDefault();
+        if (externalValue === undefined) setInternalValue("");
+        onChange?.("");
       }
     };
 
     const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
-      if (!e.target.value) e.target.value = "+38 (";
+      if (!e.target.value) {
+        const masked = "+38 (";
+        if (externalValue === undefined) setInternalValue(masked);
+        onChange?.(masked);
+      }
     };
 
     const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-      if (e.target.value === "+38 (") e.target.value = "";
+      if (e.target.value === "+38 (") {
+        if (externalValue === undefined) setInternalValue("");
+        onChange?.("");
+      }
     };
 
     return (
@@ -59,6 +72,7 @@ export const PhoneInput = forwardRef<HTMLInputElement, PhoneInputProps>(
           ref={ref}
           id={id}
           type="tel"
+          value={value}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           onFocus={handleFocus}

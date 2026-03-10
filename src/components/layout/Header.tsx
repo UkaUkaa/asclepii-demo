@@ -62,7 +62,7 @@ export function Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
-            ? "bg-white border-b border-[#D6E3F0] shadow-[0_4px_30px_rgba(13,58,126,0.08)]"
+            ? "bg-white shadow-[0_4px_30px_rgba(13,58,126,0.08)]"
             : "bg-transparent",
           mobileOpen && "opacity-0 pointer-events-none"
         )}

@@ -8,6 +8,7 @@ import { SERVICES } from "@/lib/api/mock-services";
 import { DOCTORS } from "@/lib/api/mock-doctors";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { PhoneInput } from "@/components/ui/PhoneInput";
 import { cn } from "@/lib/utils/cn";
 
 type Step = "service" | "doctor" | "time" | "confirm";
@@ -66,6 +67,7 @@ const slideVariants = {
 
 export function BookingWizard() {
   const t = useTranslations("booking");
+  const tServices = useTranslations("services");
   const locale = useLocale();
   const today = new Date();
 
@@ -212,7 +214,7 @@ export function BookingWizard() {
                           <Activity size={14} />
                         </div>
                         <span className="text-xs font-medium text-[#0C1929]">
-                          {locale === "uk" ? service.key.charAt(0).toUpperCase() + service.key.slice(1) : service.key}
+                          {tServices(`items.${service.key}.name`)}
                         </span>
                       </motion.button>
                     );
@@ -330,7 +332,7 @@ export function BookingWizard() {
                         className={cn(
                           "h-8 w-full rounded-[4px] text-xs transition-all",
                           !day ? "cursor-default" : "hover:bg-[#EEF3FB]",
-                          day === booking.date
+                          day && day === booking.date
                             ? "bg-[#0D3A7E] text-white hover:bg-[#0D3A7E]"
                             : day ? "text-[#0C1929]" : "text-transparent"
                         )}
@@ -422,12 +424,10 @@ export function BookingWizard() {
                     onChange={(e) => setBooking((b) => ({ ...b, name: e.target.value }))}
                     placeholder={locale === "uk" ? "Ім'я та прізвище" : "First and last name"}
                   />
-                  <Input
+                  <PhoneInput
                     label={t("phone")}
                     value={booking.phone}
-                    onChange={(e) => setBooking((b) => ({ ...b, phone: e.target.value }))}
-                    placeholder="+38 (0__) ___-__-__"
-                    type="tel"
+                    onChange={(value) => setBooking((b) => ({ ...b, phone: value }))}
                   />
                   <Input
                     label={t("email")}

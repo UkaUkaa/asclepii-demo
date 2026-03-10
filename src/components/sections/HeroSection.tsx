@@ -44,7 +44,7 @@ export function HeroSection() {
       <div className="container-clinic relative z-10 py-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left content */}
-          <div>
+          <div className="relative z-10">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-6">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/80 border border-[#D6E3F0] rounded-[4px] text-xs text-[#0D3A7E] font-medium shadow-sm">
@@ -77,8 +77,8 @@ export function HeroSection() {
               <Link href="/napryamky" className="sm:w-auto w-full">
                 <Button
                   variant="primary"
-                  size="md"
-                  icon={<Calendar size={16} />}
+                  size="sm"
+                  icon={<Calendar size={14} />}
                   className="whitespace-nowrap w-full sm:w-auto"
                 >
                   {t("cta")}
@@ -87,8 +87,8 @@ export function HeroSection() {
               <Link href="/likari" className="sm:w-auto w-full">
                 <Button
                   variant="outline"
-                  size="md"
-                  icon={<ChevronRight size={16} />}
+                  size="sm"
+                  icon={<ChevronRight size={14} />}
                   iconPosition="right"
                   className="whitespace-nowrap w-full sm:w-auto"
                 >

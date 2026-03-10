@@ -35,7 +35,7 @@ export const DOCTORS: Doctor[] = [
       uk: ["Ішемічна хвороба серця", "Гіпертонічна хвороба", "Порушення ритму серця", "Серцева недостатність"],
       en: ["Coronary artery disease", "Arterial hypertension", "Cardiac arrhythmias", "Heart failure"],
     },
-    languages: ["uk", "en", "ru"],
+    languages: ["uk", "en"],
     schedule: { uk: "Пн, Ср, Пт: 09:00–17:00", en: "Mon, Wed, Fri: 09:00–17:00" },
     rating: 4.9,
     reviewCount: 284,

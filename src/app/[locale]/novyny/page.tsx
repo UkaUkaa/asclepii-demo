@@ -97,7 +97,7 @@ export default function NewsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07 }}
               >
-                <Link href={{ pathname: "/novyny/[slug]", params: { slug: item.slug } }}>
+                <a href="#">
                   <motion.div
                     whileHover={{ y: -3 }}
                     transition={{ type: "spring", stiffness: 300, damping: 25 }}
@@ -130,7 +130,7 @@ export default function NewsPage() {
                       </div>
                     </div>
                   </motion.div>
-                </Link>
+                </a>
               </motion.article>
             ))}
           </div>

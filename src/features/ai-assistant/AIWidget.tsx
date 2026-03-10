@@ -214,10 +214,10 @@ export function AIWidget() {
       <AnimatePresence>
         {isOpen && !isMinimized && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            initial={{ opacity: 0, y: "100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "100%" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 sm:static sm:inset-auto w-full sm:w-[380px] glass sm:rounded-[6px] shadow-[0_20px_60px_rgba(13,58,126,0.2)] border-0 sm:border border-white/50 flex flex-col overflow-hidden z-[60] sm:z-50 sm:max-h-[520px]"
           >
             {/* Header */}

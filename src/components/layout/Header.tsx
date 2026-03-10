@@ -38,8 +38,26 @@ export function Header() {
   }, [pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    if (mobileOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      document.body.style.overflow = "hidden";
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+      if (scrollY) window.scrollTo(0, parseInt(scrollY) * -1);
+    }
+    return () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   type AppPath = "/" | "/napryamky" | "/posluhy" | "/likari" | "/novyny" | "/pro-nas" | "/kontakty";
@@ -73,7 +91,7 @@ export function Header() {
         )}
         initial={{ y: -80 }}
         animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
       >
         {/* Top bar */}
         <div className="border-b border-[#D6E3F0]/40 hidden lg:block">

@@ -32,7 +32,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, locale, onToggleLocale, 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             onClick={onClose}
           />
 
@@ -42,7 +42,7 @@ export function MobileMenu({ isOpen, onClose, navLinks, locale, onToggleLocale, 
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-white/10">

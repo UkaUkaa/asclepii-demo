@@ -54,14 +54,14 @@ export function ServicesPageContent() {
                     className="group bg-white border border-[#D6E3F0] rounded-[6px] p-7 shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow h-full flex flex-col"
                   >
                     <div
-                      className="w-14 h-14 rounded-[6px] flex items-center justify-center mb-5"
+                      className="w-14 h-14 rounded-[6px] flex items-center justify-center mb-5 mx-auto"
                       style={{ background: service.bgColor }}
                     >
                       <Icon size={26} style={{ color: service.color }} />
                     </div>
                     <h3 className="text-[#0C1929] font-medium text-base mb-3">{name}</h3>
                     <p className="text-[#4A6180] text-sm font-light leading-relaxed flex-1">{desc}</p>
-                    <div className="mt-5 pt-5 border-t border-[#EBF1F8] flex items-center gap-3">
+                    <div className="mt-5 pt-5 border-t border-[#EBF1F8] flex items-center gap-3 justify-center sm:justify-start">
                       <Link href="/napryamky">
                         <Button variant="secondary" size="sm">
                           {locale === "uk" ? "Записатись" : "Book Now"}

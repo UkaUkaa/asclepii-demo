@@ -94,24 +94,24 @@ export function HeroSection() {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="flex flex-row flex-wrap gap-3 mb-12">
-              <Link href="/napryamky">
+            <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 mb-12">
+              <Link href="/napryamky" className="sm:w-auto w-full">
                 <Button
                   variant="primary"
                   size="md"
                   icon={<Calendar size={16} />}
-                  className="whitespace-nowrap"
+                  className="whitespace-nowrap w-full sm:w-auto"
                 >
                   {t("cta")}
                 </Button>
               </Link>
-              <Link href="/likari">
+              <Link href="/likari" className="sm:w-auto w-full">
                 <Button
                   variant="outline"
                   size="md"
                   icon={<ChevronRight size={16} />}
                   iconPosition="right"
-                  className="whitespace-nowrap"
+                  className="whitespace-nowrap w-full sm:w-auto"
                 >
                   {navT("doctors")}
                 </Button>

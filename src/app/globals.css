@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* ─── Disable hover effects on touch devices ─── */
+@variant hover {
+  @media (hover: hover) {
+    &:hover { @slot }
+  }
+}
+
 @theme {
   /* ─── Color Palette: Medical Architecture 2026 ─── */
   --color-primary-50: #EEF3FB;
@@ -200,6 +207,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .container-clinic {
+    text-align: center;
+  }
+  .container-clinic img {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (min-width: 768px) {

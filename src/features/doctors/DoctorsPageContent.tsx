@@ -49,12 +49,12 @@ export function DoctorsPageContent() {
                 icon={<Search size={15} />}
               />
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-2">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3 py-1.5 text-xs rounded-[4px] border font-medium transition-all ${
+                  className={`px-3 py-1.5 text-xs rounded-[4px] border font-medium transition-all text-center ${
                     activeCategory === cat.id
                       ? "bg-[#0D3A7E] text-white border-[#0D3A7E]"
                       : "bg-white text-[#4A6180] border-[#D6E3F0] hover:border-[#0D3A7E]/50"
@@ -108,7 +108,7 @@ export function DoctorsPageContent() {
                           <p className="text-[#1A9EC9] text-xs font-light mb-2">
                             {doctor.specialty[locale]}
                           </p>
-                          <div className="flex flex-wrap gap-1 mb-2">
+                          <div className="flex flex-wrap gap-1 mb-2 justify-center sm:justify-start">
                             <Badge variant="neutral" size="sm">
                               {doctor.experience} {t("experience")}
                             </Badge>

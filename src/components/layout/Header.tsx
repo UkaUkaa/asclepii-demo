@@ -46,6 +46,10 @@ export function Header() {
     { href: "/pro-nas", label: t("nav.about") },
     { href: "/kontakty", label: t("nav.contacts") },
   ];
+  const mobileNavLinks: { href: AppPath; label: string }[] = [
+    { href: "/", label: t("nav.home") },
+    ...navLinks,
+  ];
 
   const toggleLocale = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -59,7 +63,8 @@ export function Header() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           scrolled
             ? "bg-white border-b border-[#D6E3F0] shadow-[0_4px_30px_rgba(13,58,126,0.08)]"
-            : "bg-transparent"
+            : "bg-transparent",
+          mobileOpen && "opacity-0 pointer-events-none"
         )}
         initial={{ y: -80 }}
         animate={{ y: 0 }}
@@ -242,7 +247,7 @@ export function Header() {
       <MobileMenu
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        navLinks={navLinks}
+        navLinks={mobileNavLinks}
         locale={locale}
         onToggleLocale={toggleLocale}
         phones={PHONE_NUMBERS}

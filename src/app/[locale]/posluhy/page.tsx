@@ -329,7 +329,7 @@ export default function PoslugyPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-3 flex-shrink-0 pl-10 sm:pl-0">
+                      <div className="flex items-center gap-3 flex-shrink-0 pl-10 sm:pl-0 justify-between sm:justify-end w-full sm:w-auto">
                         {item.price > 0 ? (
                           <span className="text-sm font-semibold text-[#0D3A7E] tabular-nums whitespace-nowrap">
                             {item.price.toLocaleString("uk-UA")} {locale === "uk" ? "грн" : "UAH"}

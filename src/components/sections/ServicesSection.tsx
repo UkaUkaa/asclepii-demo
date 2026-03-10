@@ -55,7 +55,7 @@ export function ServicesSection() {
                     className="group bg-white border border-[#D6E3F0] rounded-[6px] p-6 shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow cursor-pointer h-full"
                   >
                     <div
-                      className="w-12 h-12 rounded-[6px] flex items-center justify-center mb-5 transition-transform group-hover:scale-110"
+                      className="w-12 h-12 rounded-[6px] flex items-center justify-center mb-5 transition-transform group-hover:scale-110 mx-auto"
                       style={{ background: service.bgColor }}
                     >
                       <Icon size={22} style={{ color: service.color }} />

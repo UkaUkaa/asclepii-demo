@@ -36,7 +36,7 @@ export function BookingSection() {
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-3 justify-center sm:justify-start">
               {[
                 { icon: Lock, uk: "Захищені дані", en: "Secure Data" },
                 { icon: CheckCircle, uk: "Без передоплати", en: "No Prepayment" },

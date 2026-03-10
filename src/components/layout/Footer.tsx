@@ -26,7 +26,7 @@ export function Footer() {
     <footer className="bg-[#0C1929] text-white">
       {/* Main footer content */}
       <div className="container-clinic py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-center md:text-left">
           {/* Brand column */}
           <div className="lg:col-span-1">
             <div className="mb-6">
@@ -44,7 +44,7 @@ export function Footer() {
               {t("footer.tagline")}
             </p>
             {/* Social links */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 justify-center md:justify-start">
               {[
                 { icon: Facebook, href: "#", label: "Facebook" },
                 { icon: Instagram, href: "#", label: "Instagram" },
@@ -63,7 +63,7 @@ export function Footer() {
           </div>
 
           {/* Services column */}
-          <div>
+          <div className="text-left">
             <h3 className="text-white text-sm font-medium mb-5 uppercase tracking-widest">
               Послуги
             </h3>
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
 
           {/* Info column */}
-          <div>
+          <div className="text-left">
             <h3 className="text-white text-sm font-medium mb-5 uppercase tracking-widest">
               Клініка
             </h3>

@@ -48,7 +48,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <ScrollToTop />
         <div className="flex flex-col min-h-screen w-full">
           <Header />
-          <main className="flex-1 pt-[68px] lg:pt-[126px] w-full">
+          <main className="flex-1 pt-[48px] lg:pt-[82px] w-full">
             {children}
           </main>
           <Footer />

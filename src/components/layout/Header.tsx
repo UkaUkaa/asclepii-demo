@@ -38,26 +38,8 @@ export function Header() {
   }, [pathname]);
 
   useEffect(() => {
-    if (mobileOpen) {
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = "100%";
-      document.body.style.overflow = "hidden";
-    } else {
-      const scrollY = document.body.style.top;
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      document.body.style.overflow = "";
-      if (scrollY) window.scrollTo(0, parseInt(scrollY) * -1);
-    }
-    return () => {
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.width = "";
-      document.body.style.overflow = "";
-    };
+    document.documentElement.style.overflowY = mobileOpen ? "hidden" : "";
+    return () => { document.documentElement.style.overflowY = ""; };
   }, [mobileOpen]);
 
   type AppPath = "/" | "/napryamky" | "/posluhy" | "/likari" | "/novyny" | "/pro-nas" | "/kontakty";
@@ -96,22 +78,22 @@ export function Header() {
         {/* Top bar */}
         <div className="border-b border-[#D6E3F0]/40 hidden lg:block">
           <div className="container-clinic">
-            <div className="flex items-center justify-between h-10 text-xs text-[#4A6180]">
+            <div className="flex items-center justify-between h-[30px] text-[11px] text-[#4A6180]">
               <span className="whitespace-nowrap">{t("header.tagline")}</span>
-              <div className="flex items-center gap-4 flex-shrink-0">
+              <div className="flex items-center gap-3 flex-shrink-0">
                 <a
                   href={`tel:${PHONE_NUMBERS.reception.replace(/\s/g, "")}`}
-                  className="flex items-center gap-1.5 hover:text-[#0D3A7E] transition-colors whitespace-nowrap"
+                  className="flex items-center gap-1 hover:text-[#0D3A7E] transition-colors whitespace-nowrap"
                 >
-                  <Phone size={11} />
+                  <Phone size={9} />
                   <span>{t("header.phones.reception")}: {PHONE_NUMBERS.reception}</span>
                 </a>
                 <span className="text-[#D6E3F0]">|</span>
                 <a
                   href={`tel:${PHONE_NUMBERS.diagnostic.replace(/\s/g, "")}`}
-                  className="flex items-center gap-1.5 hover:text-[#0D3A7E] transition-colors whitespace-nowrap"
+                  className="flex items-center gap-1 hover:text-[#0D3A7E] transition-colors whitespace-nowrap"
                 >
-                  <Phone size={11} />
+                  <Phone size={9} />
                   <span>{t("header.phones.diagnostic")}: {PHONE_NUMBERS.diagnostic}</span>
                 </a>
               </div>
@@ -121,27 +103,29 @@ export function Header() {
 
         {/* Main navigation */}
         <div className="container-clinic">
-          <div className="flex items-center justify-between h-16 lg:h-[70px]">
+          <div className="flex items-center h-12 lg:h-[52px]">
             {/* Logo */}
+            <div className="flex-1 flex items-center">
             <Link href="/" className="flex items-center flex-shrink-0">
               <Image
                 src="/logo.webp"
                 alt="Асклепій — Медичний центр"
-                width={160}
-                height={52}
+                width={120}
+                height={39}
                 priority
-                className="h-9 w-auto lg:h-11 object-contain"
+                className="h-7 w-auto lg:h-8 object-contain"
               />
             </Link>
+            </div>
 
             {/* Desktop nav */}
-            <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation">
+            <nav className="hidden xl:flex items-center gap-0.5" aria-label="Main navigation">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "px-3 py-2 text-sm font-light rounded-[4px] transition-all duration-200 whitespace-nowrap",
+                    "px-2 py-1 text-[13px] font-light rounded-[4px] transition-all duration-200 whitespace-nowrap",
                     "hover:text-[#0D3A7E] hover:bg-[#EEF3FB]",
                     pathname === link.href
                       ? "text-[#0D3A7E] bg-[#EEF3FB] font-medium"
@@ -154,16 +138,16 @@ export function Header() {
             </nav>
 
             {/* Right actions */}
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex-1 flex items-center justify-end gap-2">
               {/* Phone dropdown (desktop) */}
               <div className="relative hidden lg:block">
                 <button
                   onClick={() => setPhoneDropdown(!phoneDropdown)}
-                  className="flex items-center gap-1.5 h-9 px-3 text-sm text-[#4A6180] hover:text-[#0D3A7E] rounded-[6px] hover:bg-[#EEF3FB] transition-all"
+                  className="flex items-center gap-1 h-7 px-2 text-[13px] text-[#4A6180] hover:text-[#0D3A7E] rounded-[6px] hover:bg-[#EEF3FB] transition-all"
                   aria-expanded={phoneDropdown}
                 >
-                  <Phone size={14} />
-                  <ChevronDown size={12} className={cn("transition-transform", phoneDropdown && "rotate-180")} />
+                  <Phone size={12} />
+                  <ChevronDown size={10} className={cn("transition-transform", phoneDropdown && "rotate-180")} />
                 </button>
                 <AnimatePresence>
                   {phoneDropdown && (
@@ -199,11 +183,11 @@ export function Header() {
               {/* Language toggle */}
               <button
                 onClick={toggleLocale}
-                className="hidden sm:flex items-center gap-1.5 h-9 px-3 text-sm text-[#4A6180] hover:text-[#0D3A7E] rounded-[6px] hover:bg-[#EEF3FB] transition-all"
+                className="hidden sm:flex items-center gap-1 h-7 px-2 text-[13px] text-[#4A6180] hover:text-[#0D3A7E] rounded-[6px] hover:bg-[#EEF3FB] transition-all"
                 aria-label="Toggle language"
               >
-                <Globe size={14} />
-                <span className="font-medium uppercase text-xs">
+                <Globe size={12} />
+                <span className="font-medium uppercase text-[11px]">
                   {locale === "uk" ? "EN" : "UA"}
                 </span>
               </button>
@@ -213,7 +197,7 @@ export function Header() {
                 href="https://patient-docs.com/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:flex items-center h-9 px-4 text-sm text-[#0D3A7E] font-medium rounded-[6px] border border-[#D6E3F0] hover:bg-[#EEF3FB] hover:border-[#0D3A7E] transition-all whitespace-nowrap"
+                className="hidden lg:flex items-center h-7 px-3 text-[13px] text-[#0D3A7E] font-medium rounded-[6px] border border-[#D6E3F0] hover:bg-[#EEF3FB] hover:border-[#0D3A7E] transition-all whitespace-nowrap"
               >
                 {t("nav.signIn")}
               </a>
@@ -222,9 +206,9 @@ export function Header() {
               <Link href="/napryamky">
                 <Button
                   variant="primary"
-                  size="sm"
+                  size="xs"
                   className="hidden lg:inline-flex whitespace-nowrap"
-                  icon={<Calendar size={14} />}
+                  icon={<Calendar size={12} />}
                 >
                   {t("header.bookButton")}
                 </Button>
@@ -233,7 +217,7 @@ export function Header() {
               {/* Mobile menu toggle */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
-                className="xl:hidden flex items-center justify-center w-10 h-10 rounded-[6px] text-[#0C1929] hover:bg-[#EEF3FB] transition-all"
+                className="xl:hidden flex items-center justify-center w-8 h-8 rounded-[6px] text-[#0C1929] hover:bg-[#EEF3FB] transition-all"
                 aria-label="Toggle menu"
                 aria-expanded={mobileOpen}
               >
@@ -246,7 +230,7 @@ export function Header() {
                       exit={{ rotate: 90, opacity: 0 }}
                       transition={{ duration: 0.15 }}
                     >
-                      <X size={20} />
+                      <X size={16} />
                     </motion.span>
                   ) : (
                     <motion.span
@@ -256,7 +240,7 @@ export function Header() {
                       exit={{ rotate: -90, opacity: 0 }}
                       transition={{ duration: 0.15 }}
                     >
-                      <Menu size={20} />
+                      <Menu size={16} />
                     </motion.span>
                   )}
                 </AnimatePresence>

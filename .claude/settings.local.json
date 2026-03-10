@@ -9,7 +9,8 @@
       "Bash(ls:*)",
       "Bash(python3:*)",
       "WebFetch(domain:asklepiy.com)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(grep -r \"dynamic\\\\|React.lazy\\\\|next/dynamic\\\\|loading\" /d/github/asclepii/src/app --include=\"*.tsx\" 2>/dev/null | head -20)"
     ]
   }
 }

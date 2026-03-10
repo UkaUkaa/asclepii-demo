@@ -343,11 +343,7 @@ export function AIWidget() {
           className="relative w-14 h-14 rounded-full bg-[#0D3A7E] text-white shadow-[0_4px_20px_rgba(13,58,126,0.4)] hover:shadow-[0_6px_28px_rgba(13,58,126,0.5)] flex items-center justify-center"
           aria-label={t("title")}
         >
-          <motion.div
-            animate={{ scale: [1, 1.15, 1] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-            className="absolute inset-0 rounded-full bg-[#1A9EC9]/30"
-          />
+          <div className="absolute inset-0 rounded-full bg-[#1A9EC9]/30 ai-pulse" />
           <MessageCircle size={22} />
           <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#10B981] rounded-full border-2 border-white flex items-center justify-center">
             <div className="w-1.5 h-1.5 bg-white rounded-full" />

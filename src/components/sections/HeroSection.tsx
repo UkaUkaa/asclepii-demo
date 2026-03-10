@@ -16,12 +16,12 @@ const STATS = [
 
 const staggerContainer: Variants = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.2 } },
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
 };
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
 };
 
 export function HeroSection() {
@@ -143,9 +143,14 @@ export function HeroSection() {
               {/* Main image container */}
               <div className="relative rounded-[6px] overflow-hidden shadow-[0_20px_60px_rgba(13,58,126,0.15)]">
                 <img
-                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80"
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80&auto=format&fit=crop"
                   alt="Modern medical clinic"
                   className="w-full h-[520px] object-cover"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  width={800}
+                  height={520}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0C1929]/40 via-transparent to-transparent" />
               </div>
@@ -154,7 +159,7 @@ export function HeroSection() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8, duration: 0.5 }}
+                transition={{ delay: 0.4, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="absolute -left-8 top-1/4 glass rounded-[6px] px-4 py-3 shadow-[0_8px_30px_rgba(13,58,126,0.15)] border border-white/50 w-[160px]"
               >
                 <div className="flex items-center gap-2 mb-1">
@@ -173,7 +178,7 @@ export function HeroSection() {
               <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.5 }}
+                transition={{ delay: 0.5, duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="absolute -right-6 bottom-1/3 glass rounded-[6px] px-4 py-3 shadow-[0_8px_30px_rgba(13,58,126,0.15)] border border-white/50 w-[160px]"
               >
                 <div className="text-xs text-[#4A6180] font-light mb-1">

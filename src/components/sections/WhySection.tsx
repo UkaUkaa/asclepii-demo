@@ -22,10 +22,10 @@ export function WhySection() {
 
       <div className="container-clinic relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-light tracking-tight mb-4" style={{ color: "#FFFFFF" }}>
@@ -39,10 +39,10 @@ export function WhySection() {
             return (
               <motion.div
                 key={key}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+                transition={{ duration: 0.4, delay: i * 0.07, ease: [0.25, 0.46, 0.45, 0.94] }}
                 className="h-full"
               >
                 <motion.div

@@ -111,7 +111,7 @@ export function Footer() {
           </div>
 
           {/* Contact column */}
-          <div>
+          <div className="text-left">
             <h3 className="text-white text-sm font-medium mb-5 uppercase tracking-widest">
               Контакти
             </h3>
@@ -148,7 +148,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <div className="flex items-start gap-3 text-white/50 text-sm justify-center md:justify-start">
+                <div className="flex items-start gap-3 text-white/50 text-sm">
                   <Clock size={14} className="mt-0.5 flex-shrink-0" />
                   <div className="font-light text-left">
                     <div>{t("contacts.weekdays")}: {t("contacts.weekdaysHours")}</div>

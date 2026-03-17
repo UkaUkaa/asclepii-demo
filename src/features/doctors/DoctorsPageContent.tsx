@@ -54,7 +54,7 @@ export function DoctorsPageContent() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3 py-1.5 text-xs rounded-[4px] border font-medium transition-all text-center leading-tight ${
+                  className={`px-3 py-1.5 text-xs rounded-[4px] border font-medium transition-all text-center leading-tight overflow-hidden break-words ${
                     activeCategory === cat.id
                       ? "bg-[#0D3A7E] text-white border-[#0D3A7E]"
                       : "bg-white text-[#4A6180] border-[#D6E3F0] hover:border-[#0D3A7E]/50"

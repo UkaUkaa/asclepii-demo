@@ -172,6 +172,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: var(--radius-sm);
 }
 
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+}
+
 /* ─── Selection ─── */
 ::selection {
   background: rgba(30, 163, 213, 0.2);

@@ -34,12 +34,13 @@ export function DoctorsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.08, ease: "easeOut" }}
+              className="h-full"
             >
-              <Link href={{ pathname: "/likari/[slug]", params: { slug: doctor.slug } }}>
+              <Link href={{ pathname: "/likari/[slug]", params: { slug: doctor.slug } }} className="block h-full">
                 <motion.div
                   whileHover={{ y: -4, scale: 1.01 }}
                   transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                  className="group bg-white border border-[#D6E3F0] rounded-[6px] overflow-hidden shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow cursor-pointer"
+                  className="group bg-white border border-[#D6E3F0] rounded-[6px] overflow-hidden shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow cursor-pointer flex flex-col h-full"
                 >
                   {/* Photo */}
                   <div className="relative h-52 overflow-hidden">
@@ -57,7 +58,7 @@ export function DoctorsSection() {
                   </div>
 
                   {/* Info */}
-                  <div className="p-5">
+                  <div className="p-5 flex flex-col flex-1">
                     <div className="mb-3">
                       <h3 className="text-[#0C1929] font-medium text-sm leading-snug mb-1">
                         {doctor.name[locale]}
@@ -70,7 +71,7 @@ export function DoctorsSection() {
                       <span>{doctor.experience} {doctorsT("experience")}</span>
                       <span>{doctor.reviewCount} {locale === "uk" ? "відгуків" : "reviews"}</span>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[#0D3A7E] text-xs font-medium opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all">
+                    <div className="flex items-center gap-1.5 text-[#0D3A7E] text-xs font-medium opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-all mt-auto">
                       <Calendar size={12} />
                       <span>{doctorsT("bookAppointment")}</span>
                     </div>

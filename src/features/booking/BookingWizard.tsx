@@ -197,11 +197,10 @@ export function BookingWizard() {
                     return (
                       <motion.button
                         key={service.id}
-                        whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => setBooking((b) => ({ ...b, serviceKey: service.key }))}
                         className={cn(
-                          "flex flex-col items-start p-4 rounded-[6px] border text-left transition-all",
+                          "flex flex-col items-start p-4 rounded-[6px] border text-left transition-all overflow-hidden w-full",
                           booking.serviceKey === service.key
                             ? "border-[#0D3A7E] bg-[#EEF3FB]"
                             : "border-[#D6E3F0] bg-white hover:border-[#0D3A7E]/50 hover:bg-[#F8FAFC]"
@@ -213,7 +212,7 @@ export function BookingWizard() {
                         >
                           <Activity size={14} />
                         </div>
-                        <span className="text-xs font-medium text-[#0C1929]">
+                        <span className="text-xs font-medium text-[#0C1929] break-words w-full">
                           {tServices(`items.${service.key}.name`)}
                         </span>
                       </motion.button>

@@ -150,7 +150,7 @@ export function Footer() {
               <li>
                 <div className="flex items-start gap-3 text-white/50 text-sm">
                   <Clock size={14} className="mt-0.5 flex-shrink-0" />
-                  <div className="font-light space-y-0.5">
+                  <div className="font-light">
                     <div>{t("contacts.weekdays")}: {t("contacts.weekdaysHours")}</div>
                     <div>{t("contacts.sunday")}: {t("contacts.sundayHours")}</div>
                   </div>

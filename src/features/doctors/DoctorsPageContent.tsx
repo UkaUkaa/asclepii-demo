@@ -54,7 +54,7 @@ export function DoctorsPageContent() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3 py-1.5 text-xs rounded-[4px] border font-medium transition-all text-center ${
+                  className={`px-3 py-1.5 text-xs rounded-[4px] border font-medium transition-all text-center leading-tight ${
                     activeCategory === cat.id
                       ? "bg-[#0D3A7E] text-white border-[#0D3A7E]"
                       : "bg-white text-[#4A6180] border-[#D6E3F0] hover:border-[#0D3A7E]/50"
@@ -82,12 +82,13 @@ export function DoctorsPageContent() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.06 }}
+                  className="h-full"
                 >
-                  <Link href={{ pathname: "/likari/[slug]", params: { slug: doctor.slug } }}>
+                  <Link href={{ pathname: "/likari/[slug]", params: { slug: doctor.slug } }} className="block h-full">
                     <motion.div
                       whileHover={{ y: -4 }}
                       transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                      className="group bg-white border border-[#D6E3F0] rounded-[6px] overflow-hidden shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow cursor-pointer"
+                      className="group bg-white border border-[#D6E3F0] rounded-[6px] overflow-hidden shadow-[0_2px_20px_rgba(13,58,126,0.06)] hover:shadow-[0_8px_40px_rgba(13,58,126,0.12)] transition-shadow cursor-pointer flex flex-col h-full"
                     >
                       <div className="flex items-start gap-4 p-5">
                         <div className="relative flex-shrink-0">
@@ -118,7 +119,7 @@ export function DoctorsPageContent() {
                           </p>
                         </div>
                       </div>
-                      <div className="px-5 pb-5">
+                      <div className="px-5 pb-5 mt-auto">
                         <div className="text-xs text-[#4A6180] font-light line-clamp-2 mb-4">
                           {doctor.bio[locale]}
                         </div>

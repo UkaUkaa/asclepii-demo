@@ -197,7 +197,7 @@ export function Header() {
                 href="https://patient-docs.com/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:flex items-center h-7 px-3 text-[13px] text-[#0D3A7E] font-medium rounded-[6px] border border-[#D6E3F0] hover:bg-[#EEF3FB] hover:border-[#0D3A7E] transition-all whitespace-nowrap"
+                className="hidden lg:flex items-center h-8 px-3 text-[13px] text-[#0D3A7E] font-medium rounded-[6px] border border-[#D6E3F0] hover:bg-[#EEF3FB] hover:border-[#0D3A7E] transition-all whitespace-nowrap"
               >
                 {t("nav.signIn")}
               </a>

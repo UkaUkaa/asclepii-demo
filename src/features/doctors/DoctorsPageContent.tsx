@@ -51,7 +51,7 @@ export function DoctorsPageContent() {
             </div>
             {/* Mobile: dropdown */}
             <select
-              className="sm:hidden w-full h-9 px-3 text-xs rounded-[6px] border border-[#D6E3F0] text-[#4A6180] bg-white font-medium focus:outline-none"
+              className="sm:hidden w-full h-9 px-3 text-xs rounded-[6px] border border-[#D6E3F0] text-[#4A6180] bg-white font-medium focus:outline-none focus-visible:outline-none"
               value={activeCategory}
               onChange={(e) => setActiveCategory(e.target.value)}
             >

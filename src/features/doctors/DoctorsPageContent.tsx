@@ -49,12 +49,24 @@ export function DoctorsPageContent() {
                 icon={<Search size={15} />}
               />
             </div>
-            <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-2">
+            {/* Mobile: dropdown */}
+            <select
+              className="sm:hidden w-full h-9 px-3 text-xs rounded-[6px] border border-[#D6E3F0] text-[#4A6180] bg-white font-medium focus:outline-none focus:border-[#0D3A7E]"
+              value={activeCategory}
+              onChange={(e) => setActiveCategory(e.target.value)}
+            >
+              {CATEGORIES.map((cat) => (
+                <option key={cat.id} value={cat.id}>{cat[locale]}</option>
+              ))}
+            </select>
+
+            {/* Desktop: buttons */}
+            <div className="hidden sm:flex sm:flex-wrap gap-2">
               {CATEGORIES.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-3 py-1.5 text-[11px] rounded-[4px] border font-medium transition-all text-center leading-tight overflow-hidden break-words ${
+                  className={`px-3 py-1.5 text-[11px] rounded-[4px] border font-medium transition-all text-center leading-tight ${
                     activeCategory === cat.id
                       ? "bg-[#0D3A7E] text-white border-[#0D3A7E]"
                       : "bg-white text-[#4A6180] border-[#D6E3F0] hover:border-[#0D3A7E]/50"

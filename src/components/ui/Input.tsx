@@ -38,12 +38,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               "w-full h-11 bg-white border rounded-[6px] px-4 py-2",
               "text-sm text-[#0C1929] placeholder:text-[#8298B0]",
-              "border-[#D6E3F0] focus:border-[#1A9EC9] focus:ring-2 focus:ring-[#1A9EC9]/20",
+              "border-[#D6E3F0]",
               "outline-none transition-all duration-200",
               "disabled:bg-[#F2F6FB] disabled:cursor-not-allowed",
               icon && iconPosition === "left" && "pl-10",
               icon && iconPosition === "right" && "pr-10",
-              error && "border-[#EF4444] focus:border-[#EF4444] focus:ring-[#EF4444]/20",
+              error && "border-[#EF4444]",
               className
             )}
             {...props}
@@ -87,9 +87,9 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           className={cn(
             "w-full bg-white border rounded-[6px] px-4 py-3 min-h-[100px]",
             "text-sm text-[#0C1929] placeholder:text-[#8298B0]",
-            "border-[#D6E3F0] focus:border-[#1A9EC9] focus:ring-2 focus:ring-[#1A9EC9]/20",
+            "border-[#D6E3F0]",
             "outline-none transition-all duration-200 resize-y",
-            error && "border-[#EF4444] focus:border-[#EF4444] focus:ring-[#EF4444]/20",
+            error && "border-[#EF4444]",
             className
           )}
           {...props}
